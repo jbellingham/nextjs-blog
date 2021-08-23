@@ -10,6 +10,7 @@ export interface PostData {
     id: string;
     date: string;
     title: string;
+    contentHtml: string;
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -27,6 +28,9 @@ export function getSortedPostsData(): PostData[] {
         const matterResult = matter(fileContents);
         const post: PostData = {
             id,
+            date: matterResult.data.date,
+            title: matterResult.data.title,
+            contentHtml: "",
             ...matterResult.data,
         };
         return post;
@@ -67,7 +71,7 @@ export function getAllPostIds() {
     });
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(id: string): Promise<PostData> {
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
@@ -81,6 +85,8 @@ export async function getPostData(id: string) {
 
     return {
         id,
+        date: matterResult.data.date,
+        title: matterResult.data.title,
         contentHtml,
         ...matterResult.data,
     };
