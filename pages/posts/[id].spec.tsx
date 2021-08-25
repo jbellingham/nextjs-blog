@@ -15,9 +15,11 @@ describe("post page", () => {
 
         expect(
             screen.getByRole("heading", { name: "Post title" })
-        ).toBeInTheDocument();
-        expect(
-            screen.getByRole("heading", { name: "Post title" })
         ).toHaveTextContent(postData.title);
+
+        const content = postData.contentHtml
+            .replace("<p>", "")
+            .replace("</p>", "");
+        expect(screen.getByText(content)).toBeInTheDocument();
     });
 });
