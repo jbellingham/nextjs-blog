@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "./[id]";
+import Post from "./[id].page";
 import { render, screen } from "@testing-library/react";
 import { PostData } from "../../lib/posts";
 import { format, parseISO } from "date-fns";
