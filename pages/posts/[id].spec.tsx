@@ -2,6 +2,7 @@ import React from "react";
 import Post from "./[id]";
 import { render, screen } from "@testing-library/react";
 import { PostData } from "../../lib/posts";
+import { format, parseISO } from "date-fns";
 
 describe("post page", () => {
     it("renders a post given some id in the route", () => {
@@ -16,6 +17,12 @@ describe("post page", () => {
         expect(
             screen.getByRole("heading", { name: "Post title" })
         ).toHaveTextContent(postData.title);
+
+        const date = parseISO(postData.date);
+
+        expect(
+            screen.getByText(format(date, "LLLL d, yyyy"))
+        ).toBeInTheDocument();
 
         const content = postData.contentHtml
             .replace("<p>", "")
