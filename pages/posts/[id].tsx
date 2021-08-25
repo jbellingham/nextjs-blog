@@ -18,11 +18,16 @@ export default function Post({ postData }) {
                 <title>{title}</title>
             </Head>
             <article>
-                <h1 className={utilStyles.headingXl}>{title}</h1>
-                <div className={utilStyles.lightText}>
+                <h1 className={utilStyles.headingXl} aria-label="Post title">
+                    {title}
+                </h1>
+                <div className={utilStyles.lightText} aria-label="Post date">
                     <Date dateString={date} />
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                <div
+                    aria-label="Post content"
+                    dangerouslySetInnerHTML={{ __html: contentHtml }}
+                />
             </article>
         </Layout>
     );
