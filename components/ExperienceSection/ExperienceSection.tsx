@@ -1,13 +1,14 @@
-import Section from "./Section";
-import ExperienceUnit from "./ExperienceUnit";
+import React from "react";
+import { ExperienceUnit } from "../ExperienceUnit";
 
-import "./experience-section.scss";
+import styles from "./experience-section.module.css";
 
 import xeroLogo from "../../assets/images/experience/xero-logo.png";
 import acurusLogo from "../../assets/images/experience/acurus-logo.png";
 import quantumItLogo from "../../assets/images/experience/quantumit-logo.png";
 import idpLogo from "../../assets/images/experience/idp-logo.png";
 import intutoLogo from "../../assets/images/experience/intuto-logo.png";
+import { Section } from "../Section";
 
 const ExperienceSection = () => {
     return (
@@ -15,7 +16,7 @@ const ExperienceSection = () => {
             title="Experience"
             accessibleName="Section containing my previous experience"
         >
-            <div className="row experience-top-row">
+            <div className={styles.experienceTopRow + " row"}>
                 <ExperienceUnit
                     logoUrl={xeroLogo}
                     title="Xero"

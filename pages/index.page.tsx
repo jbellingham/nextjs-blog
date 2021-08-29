@@ -5,7 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData, PostData } from "../lib/posts";
 import React from "react";
 
-import ExperienceSection from "../components/ExperienceSection";
+import { ExperienceSection } from "../components/ExperienceSection";
 
 interface Props {
     allPosts: PostData[];
