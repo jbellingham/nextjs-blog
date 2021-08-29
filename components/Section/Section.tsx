@@ -1,18 +1,23 @@
-import "./section.scss";
+import { es } from "date-fns/locale";
+import styles from "./section.module.css";
 
 interface Props {
     title: string;
     accessibleName: string;
-    children: JSX.Element[];
+    children: JSX.Element;
 }
 
 const Section = ({ title, accessibleName, children }: Props) => {
     return (
-        <div className="section">
-            <h6 className="bold" role="heading" aria-label={accessibleName}>
+        <div className={styles.section}>
+            <h6
+                className={styles.heading}
+                role="heading"
+                aria-label={accessibleName}
+            >
                 {title}
             </h6>
-            <div className="section-units">{children}</div>
+            {children}
         </div>
     );
 };

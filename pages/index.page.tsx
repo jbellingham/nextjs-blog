@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData, PostData } from "../lib/posts";
 import React from "react";
-
 import { ExperienceSection } from "../components/ExperienceSection";
+
+import utilStyles from "../styles/utils.module.css";
+import styles from "../styles/Home.module.css";
 
 interface Props {
     allPosts: PostData[];
@@ -17,9 +18,13 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className={utilStyles.headingMd}>
-                <p>Hello! My name is Jesse</p>
-                <p>I am a Software Developer @ ThoughtWorks</p>
+            <section className={`${utilStyles.headingMd} ${styles.heading}`}>
+                <p className={styles.helloWorld}>Hello World!</p>
+                <h1 className={styles.nameHeader}>My name is Jesse</h1>
+                <h2 style={{ color: "grey" }}>
+                    I build web applications. Currently working as a consultant
+                    developer @ Thoughtworks
+                </h2>
             </section>
             <ExperienceSection />
             {/* <section
