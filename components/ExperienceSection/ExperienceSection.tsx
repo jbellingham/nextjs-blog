@@ -1,5 +1,5 @@
 import React from "react";
-import { ExperienceUnit } from "../ExperienceUnit";
+import { ExperienceUnit } from "./ExperienceUnit";
 import { Section } from "../Section";
 
 import styles from "./experience-section.module.css";
