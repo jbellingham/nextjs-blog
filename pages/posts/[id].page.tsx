@@ -13,7 +13,7 @@ interface Props {
 export default function Post({ postData }) {
     const { title, date, contentHtml } = postData;
     return (
-        <Layout home>
+        <Layout home={false}>
             <Head>
                 <title>{title}</title>
             </Head>
