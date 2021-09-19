@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import Links from "./Links/Links";
+import Socials from "./Socials";
 
 export const siteTitle = "Next.js Sample Website";
 
@@ -17,6 +17,10 @@ export default function Layout({
     return (
         <div className={styles.container}>
             <Head>
+                <script
+                    src="https://kit.fontawesome.com/1679ee6179.js"
+                    crossOrigin="anonymous"
+                ></script>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
@@ -32,8 +36,7 @@ export default function Layout({
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
-                {/* rename this  */}
-                <Links />
+                <Socials />
                 {home ? (
                     <>
                         <Image

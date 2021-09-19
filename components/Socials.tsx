@@ -1,13 +1,13 @@
 import React from "react";
-import styles from "./Links.module.css";
+import styles from "./Socials.module.css";
 
-export default function Links() {
+export default function Socials() {
     return (
         <div className={styles.links}>
             <ul className={styles.iconsList}>
                 <li className={styles.icon}>
                     <a
-                        href="https://www.github.com/jessebellingham"
+                        href="https://www.github.com/jbellingham"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -33,16 +33,6 @@ export default function Links() {
                     </a>
                 </li>
             </ul>
-            <div className={styles.small}>
-                Built with ❤️ using{" "}
-                <a
-                    href="https://www.nextjs.org/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    NextJS
-                </a>
-            </div>
         </div>
     );
 }
