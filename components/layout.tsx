@@ -15,7 +15,11 @@ export default function Layout({
     home: boolean;
 }) {
     return (
-        <div className={styles.container}>
+        <div
+            className={`${styles.container} ${
+                home ? styles.home : styles.post
+            }`}
+        >
             <Head>
                 <script
                     src="https://kit.fontawesome.com/1679ee6179.js"
