@@ -3,9 +3,6 @@ title: "What makes a pair?"
 date: "2021-03-12"
 ---
 
-![https://destructured.dev/wp-content/uploads/2021/03/scott-graham-5fNmWej4tAA-unsplash-1024x683.jpg](https://destructured.dev/wp-content/uploads/2021/03/scott-graham-5fNmWej4tAA-unsplash-1024x683.jpg)
-
-
 Do you practice pair programming? If the answer to that is yes, how much thought do you put into *who* you pair with? It might just be whoever is available at the time, or who has context on the task at hand. One of the great benefits of pair programming is that it helps facilitate growth of the individuals in the pairing moreso than you might see if those same individuals worked in isolation.
 
 There are many ways in which this growth can manifest, and it depends in part on the skill levels of the individuals in the pairing. It follows then, that by applying a bit of reasoning we can start to think about what pairings might lead to the growth we’re hoping for.
@@ -36,7 +33,9 @@ The proficient has internalised the rules. Solutions appear fully formed in thei
 
 The expert transcends the rules, and they are no longer confined to only think in those rules. There is a great analogy to chess grandmasters:
 
-> The grandmaster doesn’t understand the game better than you, they simply have a greater pool of memories and experiences of past games to think back on. They contextualise the game in play relative to previous similar games. From there they are able to reduce the scope of thinking needed for them to come up with their next move.https://www.nature.com/articles/35088119
+> The grandmaster doesn’t understand the game better than you, they simply have a greater pool of memories and experiences of past games to think back on. They contextualise the game in play relative to previous similar games. From there they are able to reduce the scope of thinking needed for them to come up with their next move.
+>
+> -- https://www.nature.com/articles/35088119
 
 Likewise, the expert developer gains their expertise through their wealth of memories and experiences throughout their career. They’ve made many mistakes, and learned from those mistakes on their way to expertise. Many of the problems they are faced with, they have been exposed to and solved before. They then are well equipped to solve them again.
 
@@ -46,13 +45,13 @@ So what does all of this have to do with pair programming? A lot, if you put you
 
 With that said, rate yourself according to the above levels of skill acquisition, you may wish to specifically target a skill you want to grow. Next, if you’re already doing pair programming, consider who you last paired with (if you’re not already doing pair programming, consider one of the other developers on your team). Rate them according to the levels of skills acquisition, and be honest without being unnecessarily scathing. Lastly, think about how that pairing went:
 
-- Did you accomplish the task or tasks you set out to achieve?
-- What was the quality of the end result? Were you happy with it?
-- What kinds of conversations were you having while pairing?
-- Did one person “drive” more than the other?1
-    - If so, was it agreed upon between the pair or did it happen organically?
-    - Was it done in order to “move faster”, or in order to help facilitate growth in the less experienced person?
-- Did you come away from the pairing feeling like you’d learned something new, or further cemented a previous learning?
+-   Did you accomplish the task or tasks you set out to achieve?
+-   What was the quality of the end result? Were you happy with it?
+-   What kinds of conversations were you having while pairing?
+-   Did one person “drive” more than the other?1
+    -   If so, was it agreed upon between the pair or did it happen organically?
+    -   Was it done in order to “move faster”, or in order to help facilitate growth in the less experienced person?
+-   Did you come away from the pairing feeling like you’d learned something new, or further cemented a previous learning?
 
 Depending on the skill levels of a pairing, the outcome of that pairing can have *vastly* different results. For example:
 

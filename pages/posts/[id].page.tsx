@@ -10,7 +10,7 @@ interface Props {
     postData: PostData;
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData }: Props) {
     const { title, date, contentHtml } = postData;
     return (
         <Layout home={false}>
