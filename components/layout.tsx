@@ -15,11 +15,7 @@ export default function Layout({
     home: boolean;
 }) {
     return (
-        <div
-            className={`${styles.container} ${
-                home ? styles.home : styles.post
-            }`}
-        >
+        <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -68,7 +64,7 @@ export default function Layout({
                     </>
                 )}
             </header>
-            <main>{children}</main>
+            <main className={styles.content}>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">

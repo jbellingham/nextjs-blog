@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData, PostData } from "../lib/posts";
 import React from "react";
 import Link from "next/link";
+import styles from "./index.module.css";
 
 import Date from "../components/date";
 
@@ -18,36 +19,38 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className={utilStyles.headingMd}>
-                <p>
-                    I am a full-stack developer, currently working @&nbsp;
-                    <a
-                        href="http://thoughtworks.com"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Thoughtworks
-                    </a>
-                </p>
-            </section>
-            <section
-                className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
-            >
-                <h2 className={utilStyles.headingLg}>Blog</h2>
-                <ul className={utilStyles.list}>
-                    {allPosts.map(({ id, date, title }) => (
-                        <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/posts/${id}`}>
-                                <a>{title}</a>
-                            </Link>
-                            <br />
-                            <small className={utilStyles.lightText}>
-                                <Date dateString={date} />
-                            </small>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+            <div className={styles.home}>
+                <section className={utilStyles.headingMd}>
+                    <p>
+                        I am a full-stack developer, currently working @&nbsp;
+                        <a
+                            href="http://thoughtworks.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Thoughtworks
+                        </a>
+                    </p>
+                </section>
+                <section
+                    className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+                >
+                    <h2 className={utilStyles.headingLg}>Blog</h2>
+                    <ul className={utilStyles.list}>
+                        {allPosts.map(({ id, date, title }) => (
+                            <li className={utilStyles.listItem} key={id}>
+                                <Link href={`/posts/${id}`}>
+                                    <a>{title}</a>
+                                </Link>
+                                <br />
+                                <small className={utilStyles.lightText}>
+                                    <Date dateString={date} />
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
         </Layout>
     );
 };
