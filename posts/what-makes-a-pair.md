@@ -1,5 +1,5 @@
 ---
-title: "What makes a pair?"
+title: "What Makes A Pair?"
 date: "2021-03-12"
 ---
 
