@@ -20,8 +20,14 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             </Head>
             <section className={utilStyles.headingMd}>
                 <p>
-                    I am a full-stack developer, currently working @
-                    Thoughtworks
+                    I am a full-stack developer, currently working @&nbsp;
+                    <a
+                        href="http://thoughtworks.com"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Thoughtworks
+                    </a>
                 </p>
             </section>
             <section

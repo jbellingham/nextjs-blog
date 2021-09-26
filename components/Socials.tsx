@@ -1,3 +1,6 @@
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styles from "./Socials.module.css";
 
@@ -11,7 +14,7 @@ export default function Socials() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="fa fa-github"></i>
+                        <FontAwesomeIcon icon={faGithub} />
                     </a>
                 </li>
                 <li className={styles.icon}>
@@ -20,7 +23,7 @@ export default function Socials() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="fa fa-linkedin"></i>
+                        <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                 </li>
                 <li className={styles.icon}>
@@ -29,7 +32,7 @@ export default function Socials() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="fa fa-envelope"></i>
+                        <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                 </li>
             </ul>

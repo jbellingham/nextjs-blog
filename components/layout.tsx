@@ -21,10 +21,6 @@ export default function Layout({
             }`}
         >
             <Head>
-                <script
-                    src="https://kit.fontawesome.com/1679ee6179.js"
-                    crossOrigin="anonymous"
-                ></script>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
