@@ -6,7 +6,7 @@ export default function Now() {
     return (
         <Layout home={false}>
             <Head>
-                <title>What I'm doing now</title>
+                <title>What I&apos;m doing now</title>
             </Head>
             <article>
                 <p>
