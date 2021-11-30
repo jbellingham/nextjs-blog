@@ -3,7 +3,8 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import Socials from "./Socials";
+import Socials from "./socials";
+import Pages from "./pages";
 
 export const siteTitle = "Jesse Bellingham / Full Stack Developer";
 
@@ -32,7 +33,10 @@ export default function Layout({
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
-                <Socials />
+                <div className={styles.links}>
+                    <Pages />
+                    <Socials />
+                </div>
                 {home ? (
                     <>
                         <Image
