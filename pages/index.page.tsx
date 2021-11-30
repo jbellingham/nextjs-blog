@@ -31,6 +31,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                             Thoughtworks
                         </a>
                     </p>
+                    <p>Sometimes I write stuff 👇</p>
                 </section>
                 <section
                     className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}

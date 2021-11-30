@@ -8,6 +8,17 @@ body {
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+a:link {
+    text-decoration: none;
+    color: rgb(65, 110, 231);
+}
+a:visited {
+    color: olive;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 * {
     box-sizing: border-box;
 }
