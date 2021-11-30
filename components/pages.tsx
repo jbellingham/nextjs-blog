@@ -6,6 +6,7 @@ export default function Pages() {
     return (
         <div className={styles.linkContainer}>
             <Link href="/now">Now</Link>
+            <Link href="/blog">Blog</Link>
         </div>
     );
 }

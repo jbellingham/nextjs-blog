@@ -3,3 +3,7 @@
     display: inline;
     font-size: larger;
 }
+
+.linkContainer a:not(:last-of-type) {
+    padding-right: 1em;
+}
