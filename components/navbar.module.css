@@ -1,0 +1,79 @@
+.navbar {
+    height: 80px;
+    width: 100%;
+    background: blue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+}
+
+.navLogo {
+    text-decoration: none;
+    color: white;
+}
+
+.navLinks {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+    list-style: none;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s all;
+}
+
+.navLink:hover {
+    color: red;
+}
+
+.navIcon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        position: relative;
+    }
+
+    .navLinks {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 80px;
+        left: -100%;
+        transition: 0.5s all;
+    }
+
+    .navLinks.active {
+        background: blue;
+        left: 0;
+    }
+
+    .navItem {
+        padding: 10px 0;
+        border-top: 1px solid red;
+        border-bottom: 1px solid red;
+    }
+
+    .navIcon {
+        display: flex;
+    }
+}
+
+ul.iconsList {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-bottom: 10px;
+}

@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Socials from "./socials";
 import Pages from "./pages";
+import NavBar from "./navbar";
 
 export const siteTitle = "Jesse Bellingham / Full Stack Developer";
 
@@ -34,8 +35,9 @@ export default function Layout({
             </Head>
             <header className={styles.header}>
                 <div className={styles.links}>
-                    <Pages />
-                    <Socials />
+                    <NavBar />
+                    {/* <Pages />
+                    <Socials /> */}
                 </div>
                 {home ? (
                     <>
