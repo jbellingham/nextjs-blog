@@ -1,14 +1,15 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "../components/layout";
+import styles from "./page.module.css";
 
-export default function Now() {
+export default function NowPage(): JSX.Element {
     return (
         <Layout home={false}>
             <Head>
                 <title>What I&apos;m doing now</title>
             </Head>
-            <article>
+            <article className={styles.page}>
                 <p>
                     This is a{" "}
                     <a
@@ -34,9 +35,14 @@ export default function Now() {
                 <h2>Read</h2>
                 <p>
                     <a href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">
-                        A Philosphy of Software Design by John Ousterhout
-                    </a>
+                        A Philosphy of Software Design
+                    </a>{" "}
+                    by John Ousterhout
                 </p>
+                <h2>Playing</h2>
+                <h2>Played</h2>
+                <h2>Learning</h2>
+                <p>(Neo)Vim</p>
             </article>
         </Layout>
     );

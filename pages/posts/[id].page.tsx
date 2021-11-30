@@ -5,7 +5,7 @@ import Date from "../../components/date";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData, PostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
-import styles from "./post.module.css";
+import styles from "../page.module.css";
 
 interface Props {
     postData: PostData;
@@ -18,7 +18,7 @@ export default function Post({ postData }: Props) {
             <Head>
                 <title>{title}</title>
             </Head>
-            <article className={styles.post}>
+            <article className={styles.page}>
                 <h1 className={utilStyles.headingXl} aria-label="Post title">
                     {title}
                 </h1>
