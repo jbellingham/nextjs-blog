@@ -19,6 +19,11 @@ export default function NavBar() {
         <nav className={styles.menuWrap} role="navigation">
             <ul id="menu" className={styles.menu}>
                 <li className={styles.menuItem}>
+                    <Link href="/">
+                        <a className={styles.navLink}>Home</a>
+                    </Link>
+                </li>
+                <li className={styles.menuItem}>
                     <Link href="/now">
                         <a className={styles.navLink}>Now</a>
                     </Link>
