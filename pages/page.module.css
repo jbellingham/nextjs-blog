@@ -8,3 +8,9 @@
         width: 50rem;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .page {
+        width: 100%;
+    }
+}
