@@ -15,7 +15,7 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
     return (
         <Layout home={false}>
             <Head>
-                <title>All of my blog posts</title>
+                <title>Jesse Bellingham | Blog</title>
             </Head>
             <article className={styles.page}>
                 <section
