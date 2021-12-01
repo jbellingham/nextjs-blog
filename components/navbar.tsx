@@ -16,21 +16,55 @@ export default function NavBar() {
     };
 
     return (
-        <nav className={styles.navbar}>
-            <div onClick={handleClick}>
-                {open ? (
-                    <FontAwesomeIcon icon={faTimes} />
-                ) : (
-                    <FontAwesomeIcon icon={faBars} />
-                )}
-            </div>
-            {open && (
-                <ul
-                    className={`${open ? "active" : ""} ${styles.iconsList} ${
-                        styles.navLinks
-                    }`}
-                >
-                    <li className={styles.navItem}>
+        <nav className={styles.menuWrap} role="navigation">
+            <ul id="menu" className={styles.menu}>
+                <li className={styles.menuItem}>
+                    <Link href="/now">
+                        <a className={styles.navLink}>Now</a>
+                    </Link>
+                </li>
+                <li className={styles.menuItem}>
+                    <Link href="/blog">
+                        <a className={styles.navLink}>Blog</a>
+                    </Link>
+                </li>
+                <li className={styles.menuItem}>
+                    <a
+                        className={styles.navLink}
+                        href="https://www.github.com/jbellingham"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                </li>
+                <li className={styles.menuItem}>
+                    <a
+                        className={styles.navLink}
+                        href="https://www.linkedin.com/in/jesse-bellingham/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                </li>
+                <li className={styles.menuItem}>
+                    <a
+                        className={styles.navLink}
+                        href="mailto:hello@jessebellingham.com"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    );
+}
+
+{
+    /* <li className={styles.navItem}>
                         <Link href="/now">
                             <a className={styles.navLink}>Now</a>
                         </Link>
@@ -69,9 +103,5 @@ export default function NavBar() {
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
                         </a>
-                    </li>
-                </ul>
-            )}
-        </nav>
-    );
+                    </li> */
 }

@@ -1,79 +1,74 @@
-.navbar {
-    height: 80px;
+/* 
+  * make the menu scroll left and right 
+  * If content overflows the container
+  */
+.menuWrap {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
     width: 100%;
-    background: blue;
-    color: white;
+    margin-bottom: 1em;
+}
+.menuWrap a {
+    text-decoration: none;
+    color: rgb(188, 192, 192);
+}
+
+/* 
+  * allow menu items to alter their dimensions  
+  * to fill available space
+  */
+.menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    font-size: 1.2rem;
-}
-
-.navLogo {
-    text-decoration: none;
-    color: white;
-}
-
-.navLinks {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 20px;
     list-style: none;
-}
-
-.navLink {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s all;
-}
-
-.navLink:hover {
-    color: red;
-}
-
-.navIcon {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 500px) {
-    .navbar {
-        position: relative;
-    }
-
-    .navLinks {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        top: 80px;
-        left: -100%;
-        transition: 0.5s all;
-    }
-
-    .navLinks.active {
-        background: blue;
-        left: 0;
-    }
-
-    .navItem {
-        padding: 10px 0;
-        border-top: 1px solid red;
-        border-bottom: 1px solid red;
-    }
-
-    .navIcon {
-        display: flex;
-    }
-}
-
-ul.iconsList {
-    display: inline;
-    padding: 0;
     margin: 0;
-    list-style: none;
-    padding-bottom: 10px;
+    padding: 0;
+}
+
+@media only screen and (min-width: 500px) {
+    .menu {
+        justify-content: center;
+    }
+}
+
+/* 
+  * styles for individual menu items
+  */
+.menuItem {
+    /* spacing styles */
+    -ms-flex-preferred-size: 120px;
+    flex-basis: 120px; /* sets the initial main size of a each menu item */
+    -ms-flex-negative: 0;
+    flex-shrink: 0; /* don't allow menu item to shrink below 120px when there isn’t enough space on the row. */
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; /* allow items to grow up to 150px wide if the container is big enough */
+    max-width: 150px;
+    margin: 0 2px;
+
+    /* additional styles */
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    /* background: white; */
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.menuItem a {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding: 11px 0;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+    background: #f3f3f3;
+}
+
+.menuItem:hover a {
+    color: rgb(78, 78, 78);
 }
