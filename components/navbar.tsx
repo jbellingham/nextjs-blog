@@ -6,15 +6,6 @@ import styles from "./navbar.module.css";
 import { useState } from "react";
 
 export default function NavBar() {
-    const [open, setOpen] = useState(false);
-    const handleClick = () => {
-        setOpen(!open);
-    };
-
-    const closeMenu = () => {
-        setOpen(false);
-    };
-
     return (
         <nav className={styles.menuWrap} role="navigation">
             <ul id="menu" className={styles.menu}>
@@ -34,34 +25,37 @@ export default function NavBar() {
                     </Link>
                 </li>
                 <li className={styles.menuItem}>
-                    <a
-                        className={styles.navLink}
-                        href="https://www.github.com/jbellingham"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <FontAwesomeIcon icon={faGithub} />
-                    </a>
+                    <Link href="https://www.github.com/jbellingham">
+                        <a
+                            className={styles.navLink}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+                    </Link>
                 </li>
                 <li className={styles.menuItem}>
-                    <a
-                        className={styles.navLink}
-                        href="https://www.linkedin.com/in/jesse-bellingham/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
+                    <Link href="https://www.linkedin.com/in/jesse-bellingham/">
+                        <a
+                            className={styles.navLink}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FontAwesomeIcon icon={faLinkedin} />
+                        </a>
+                    </Link>
                 </li>
                 <li className={styles.menuItem}>
-                    <a
-                        className={styles.navLink}
-                        href="mailto:hello@jessebellingham.com"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <FontAwesomeIcon icon={faEnvelope} />
-                    </a>
+                    <Link href="mailto:hello@jessebellingham.com">
+                        <a
+                            className={styles.navLink}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </a>
+                    </Link>
                 </li>
             </ul>
         </nav>
