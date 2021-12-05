@@ -19,7 +19,7 @@ Well it turns out now you can build these projects without Windows, it just take
 
 ### Option 1: Add a separate, cross-platform build project
 
-Firstly, if you are doing this on a non-Windows system, you will need to download the [Mono sdk](https://www.mono-project.com/) in order to create .NET Framework projects.
+Firstly, in order to create .NET Framework projects on Mac or Linux, you will need to download the [Mono sdk](https://www.mono-project.com/).
 
 Assuming you already have an existing database project, let’s create a new ".NET Standard Class Library" project called `Database.Build`. Delete `Class1.cs`, we won’t be using it.
 
@@ -91,6 +91,8 @@ Finally, there is support for running pre and post-deployment scripts in a dacpa
   <PostDeploy Include="..\Database\Post-Deployment\Script.PostDeployment.sql" />
 </ItemGroup>
 ```
+
+---
 
 ### Option 2: Use .NET Framework reference assemblies
 
