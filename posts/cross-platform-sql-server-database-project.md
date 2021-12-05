@@ -126,6 +126,6 @@ With the whole thing looking something like this for a database project:
 
 With that done, we need to do a `dotnet restore` to populate the added reference assemblies, at which point, we should be able to do a `dotnet build` noting a similar build output to the one shown above.
 
-**Common issues**
+**Note**
 
 An issue I ran into with this second approach was this [Asset file is missing target](https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1005) error. As the docs suggest, I was able to resolve it by ensuring that I had the `TargetFrameworks` property, and deleting the `obj` folder. After doing this, the build should now be working.
