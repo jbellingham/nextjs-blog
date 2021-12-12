@@ -35,3 +35,7 @@ p code {
 * {
     box-sizing: border-box;
 }
+
+article img {
+    width: 100%;
+}

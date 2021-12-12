@@ -1,5 +1,7 @@
 ---
 title: "What Makes A Pair?"
+description: "How pair composition affects growth outcomes"
+keywords: "pair, pairing, growth, mentoring"
 date: "2021-03-12"
 ---
 

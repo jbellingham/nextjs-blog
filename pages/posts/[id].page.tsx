@@ -12,11 +12,12 @@ interface Props {
 }
 
 export default function Post({ postData }: Props) {
-    const { title, date, contentHtml } = postData;
+    const { title, date, contentHtml, keywords, description } = postData;
     return (
         <Layout home={false}>
             <Head>
                 <title>{title}</title>
+                <meta name="description" content={description} />
             </Head>
             <article className={styles.page}>
                 <h1 className={utilStyles.headingXl} aria-label="Post title">
@@ -29,6 +30,13 @@ export default function Post({ postData }: Props) {
                     aria-label="Post content"
                     dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
+                <div
+                    className={utilStyles.lightText}
+                    aria-label="Post keywords"
+                >
+                    <p>Tags:</p>
+                    {keywords}
+                </div>
             </article>
         </Layout>
     );

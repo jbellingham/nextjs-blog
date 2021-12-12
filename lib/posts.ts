@@ -10,6 +10,8 @@ export interface PostData {
     id: string;
     date: string;
     title: string;
+    description: string;
+    keywords: string;
     contentHtml: string;
 }
 
@@ -30,6 +32,8 @@ export function getSortedPostsData(): PostData[] {
             id,
             date: matterResult.data.date,
             title: matterResult.data.title,
+            description: matterResult.data.description,
+            keywords: matterResult.data.keywords,
             contentHtml: "",
             ...matterResult.data,
         };
@@ -88,6 +92,8 @@ export async function getPostData(id: string): Promise<PostData> {
         id,
         date: matterResult.data.date,
         title: matterResult.data.title,
+        description: matterResult.data.description,
+        keywords: matterResult.data.keywords,
         contentHtml,
         ...matterResult.data,
     };

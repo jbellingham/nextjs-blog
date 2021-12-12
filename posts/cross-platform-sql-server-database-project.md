@@ -1,11 +1,13 @@
 ---
 title: "TWIL: Cross-platform SQL Server Database Project"
+description: "How to enable a SQL Server Database project cross-platform"
+keywords: "dotnet, .net, sql, sql server, cross-platform, legacy"
 date: "2021-12-05"
 ---
 
 ## This Week I Learned
 
-**It’s possible to build a SQL Server Database project down to a dacpac on Mac or Linux**.
+It’s possible to build a SQL Server Database project down to a dacpac on Mac or Linux.
 
 ### What is a SQL Server Database project?
 
