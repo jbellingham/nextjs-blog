@@ -63,9 +63,6 @@ export default function NowPage(): JSX.Element {
                     allowFullScreen={false}
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 ></iframe>
-                <h3>Played</h3>
-                <h2>Learning</h2>
-                <p>(Neo)Vim</p>
             </article>
         </Layout>
     );
