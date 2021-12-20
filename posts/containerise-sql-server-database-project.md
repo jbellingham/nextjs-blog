@@ -5,7 +5,7 @@ keywords: "dotnet, .net, sql, sql server, cross-platform, legacy, dacpac"
 date: "2021-12-12"
 ---
 
-### This Week I Learned
+## This Week I Learned
 
 How to containerise a SQL Server database project with dacpac.
 

@@ -39,3 +39,7 @@ p code {
 article img {
     width: 100%;
 }
+
+article {
+    font-size: large;
+}
