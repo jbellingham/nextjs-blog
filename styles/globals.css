@@ -20,7 +20,7 @@ a:hover {
 }
 
 pre {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(35, 35, 35);
     border-radius: 5px;
     padding: 1em;
     overflow-x: auto;
@@ -42,4 +42,11 @@ article img {
 
 article {
     font-size: large;
+}
+
+blockquote {
+    margin: 18px 20px;
+    background-color: rgb(75, 75, 75);
+    padding: 0.1em 1em;
+    border-radius: 5px;
 }
