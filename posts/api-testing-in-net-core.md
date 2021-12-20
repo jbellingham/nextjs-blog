@@ -35,7 +35,7 @@ This post follows on from my previous in the TWIL series, where I demonstrated h
 
 ### Test setup using WebApplicationFactory
 
-[WebApplicationFactory](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) is a class provided by Microsoft in the [`Microsoft.AspNetCore.Mvc.Testing`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.testing?view=aspnetcore-6.0) namespace, from .Net Core 1 onward. It is a utility class that greatly simplifies testing .Net APIs by providing a clean and easy way of spinning up a running instance of an application, as well as providing the configurability we need.
+[WebApplicationFactory](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) is a class provided by Microsoft in the [`Microsoft.AspNetCore.Mvc.Testing`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.testing) namespace, from .Net Core 1 onward. It is a utility class that greatly simplifies testing .Net APIs by providing a clean and easy way of spinning up a running instance of an application, as well as providing the configurability we need.
 
 First thing we’re going to want to do is create a new class `ApiWebApplicationFactory`:
 
@@ -158,6 +158,8 @@ In order for us to use our `ApiWebApplicationFactory` in our new test class, it 
 -   Collection fixture
     -   Can be used for multiple classes
     -   Setup runs once for the first class it is attached to, and is shared for all subsequent classes
+
+> 💡 For more information check out [the docs](https://xunit.net/docs/shared-context).
 
 Because we probably don’t need or want to go through the process of creating a new factory, and thus a new application and test server for every test, we probably don’t want to go with the constructor and dispose option. That leaves us with two options, class fixture or collection fixture. We’ll go with class fixture for now, since we only have one test class, however if in future we have multiple test classes that need the same test setup, we may decide to share it with a collection fixture.
 
