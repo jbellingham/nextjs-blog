@@ -17,7 +17,11 @@ export default function Post({ postData }: Props) {
         <Layout home={false}>
             <Head>
                 <title>{title}</title>
+                <meta name="og:title" content={title} />
+                <meta name="twitter:title" content={title} />
                 <meta name="description" content={description} />
+                <meta name="og:description" content={description} />
+                <meta name="twitter:description" content={description} />
             </Head>
             <article className={styles.page}>
                 <h1 className={utilStyles.headingXl} aria-label="Post title">

@@ -5,7 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import NavBar from "./navbar";
 
-export const siteTitle = "Jesse Bellingham / Full Stack Developer";
+export const siteTitle = "Jesse Bellingham / Software Developer";
 
 export default function Layout({
     children,
