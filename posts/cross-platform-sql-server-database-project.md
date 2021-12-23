@@ -102,7 +102,7 @@ This option is a bit simpler, and involves adding a package reference directly t
 
 We'll need to add the following to your `<PropertyGroup>` element:
 
-`<TargetFramework>net472</TargetFramework>`
+`<TargetFramework>net452</TargetFramework>`
 
 We'll also need to add a new `ItemGroup`:
 
