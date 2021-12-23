@@ -24,6 +24,17 @@ export default function NavBar() {
                     </Link>
                 </li>
                 <li className={styles.menuItem}>
+                    <Link href="https://timeline.jessebellingham.com">
+                        <a
+                            className={styles.navLink}
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            Timeline
+                        </a>
+                    </Link>
+                </li>
+                <li className={styles.menuItem}>
                     <Link href="https://www.github.com/jbellingham">
                         <a
                             className={styles.navLink}
