@@ -28,7 +28,7 @@ Well with Docker, we can!
 
 ### Creating the Dockerfile
 
-This post follows on from last week's post about cross-platform database projects, so we'll use that project as the basis for our new container. First, let's create a new Dockerfile inside our database project, and our Dockerfile will be based off of the `mcr.microsoft.com/mssql/server` image on DockerHub, targeting version 2019
+This post follows on from [last week's post](cross-platform-sql-server-database-project) about cross-platform database projects, so we'll use that project as the basis for our new container. First, let's create a new Dockerfile inside our database project, and our Dockerfile will be based off of the `mcr.microsoft.com/mssql/server` image on DockerHub, targeting version 2019
 
 ```docker
 FROM mcr.microsoft.com/mssql/server:2019-latest

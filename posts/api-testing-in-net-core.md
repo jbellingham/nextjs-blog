@@ -248,6 +248,6 @@ public class MyApplicationApiTests : IClassFixture<ApiWebApplicationFactory>
 }
 ```
 
-And there you have it, a fully functional API test 🎉🎉 running against a real instance of the API, configured near identically to what would be in production, and yet, completely decoupled from any notion of _environment_. What we have here is incredibly flexible in that we can happily run these tests in, say, a build pipeline, and all we need to enable that is to have the owned database configured and available on the build agent (which is easy enough with a containerised database as in my previous post).
+And there you have it, a fully functional API test 🎉🎉 running against a real instance of the API, configured near identically to what would be in production, and yet, completely decoupled from any notion of _environment_. What we have here is incredibly flexible in that we can happily run these tests in, say, a build pipeline, and all we need to enable that is to have the owned database configured and available on the build agent (which is easy enough with a containerised database as in [my previous post](containerise-sql-server-database-project)).
 
 Happy testing! 🧪
