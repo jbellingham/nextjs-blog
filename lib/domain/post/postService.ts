@@ -3,19 +3,11 @@ import path from "path";
 import matter from "gray-matter";
 import html from "remark-html";
 import remark from "remark";
+import { IPost } from "./post";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export interface PostData {
-    id: string;
-    date: string;
-    title: string;
-    description: string;
-    keywords: string;
-    contentHtml: string;
-}
-
-export function getSortedPostsData(): PostData[] {
+export function getSortedPosts(includeDrafts: boolean = false): IPost[] {
     // Get file names under /posts
     const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData = fileNames.map((fileName) => {
@@ -28,12 +20,13 @@ export function getSortedPostsData(): PostData[] {
 
         // Use gray-matter to parse the post metadata section
         const matterResult = matter(fileContents);
-        const post: PostData = {
+        const post: IPost = {
             id,
             date: matterResult.data.date,
             title: matterResult.data.title,
             description: matterResult.data.description,
             keywords: matterResult.data.keywords,
+            isDraft: matterResult.data.isDraft,
             contentHtml: "",
             ...matterResult.data,
         };
@@ -41,15 +34,17 @@ export function getSortedPostsData(): PostData[] {
     });
 
     // Sort posts by date
-    return allPostsData.sort(({ date: a }, { date: b }) => {
-        if (a < b) {
-            return 1;
-        } else if (a > b) {
-            return -1;
-        } else {
-            return 0;
-        }
-    });
+    return allPostsData
+        .filter((p) => includeDrafts || !p.isDraft)
+        .sort(({ date: a }, { date: b }) => {
+            if (a < b) {
+                return 1;
+            } else if (a > b) {
+                return -1;
+            } else {
+                return 0;
+            }
+        });
 }
 
 export function getAllPostIds() {
@@ -76,7 +71,7 @@ export function getAllPostIds() {
     });
 }
 
-export async function getPostData(id: string): Promise<PostData> {
+export async function getPost(id: string): Promise<IPost> {
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
@@ -94,6 +89,7 @@ export async function getPostData(id: string): Promise<PostData> {
         title: matterResult.data.title,
         description: matterResult.data.description,
         keywords: matterResult.data.keywords,
+        isDraft: matterResult.data.isDraft,
         contentHtml,
         ...matterResult.data,
     };

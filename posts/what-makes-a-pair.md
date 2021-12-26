@@ -3,6 +3,7 @@ title: "What Makes A Pair?"
 description: "How pair composition affects growth outcomes"
 keywords: "pair, pairing, growth, mentoring"
 date: "2021-03-12"
+isDraft: false
 ---
 
 Do you practice pair programming? If the answer to that is yes, how much thought do you put into *who* you pair with? It might just be whoever is available at the time, or who has context on the task at hand. One of the great benefits of pair programming is that it helps facilitate growth of the individuals in the pairing moreso than you might see if those same individuals worked in isolation.

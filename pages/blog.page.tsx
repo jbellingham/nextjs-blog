@@ -1,4 +1,3 @@
-import { getSortedPostsData, PostData } from "../lib/posts";
 import Link from "next/link";
 import { NextPage } from "next";
 import utilStyles from "../styles/utils.module.css";
@@ -6,9 +5,11 @@ import Date from "../components/date";
 import Layout from "../components/layout";
 import Head from "next/head";
 import styles from "./page.module.css";
+import { getSortedPosts } from "../lib/domain/post/postService";
+import { IPost } from "../lib/domain/post/post";
 
 interface Props {
-    allPosts: PostData[];
+    allPosts: IPost[];
 }
 
 const BlogPage: NextPage<Props> = ({ allPosts }) => {
@@ -44,7 +45,7 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 export default BlogPage;
 
 export async function getStaticProps() {
-    const allPosts = getSortedPostsData();
+    const allPosts = getSortedPosts();
     return {
         props: {
             allPosts,

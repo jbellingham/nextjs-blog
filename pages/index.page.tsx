@@ -2,15 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData, PostData } from "../lib/posts";
 import React from "react";
 import Link from "next/link";
 import styles from "./index.module.css";
 
 import Date from "../components/date";
+import { IPost } from "../lib/domain/post/post";
+import { getSortedPosts } from "../lib/domain/post/postService";
 
 interface Props {
-    allPosts: PostData[];
+    allPosts: IPost[];
 }
 
 const Home: NextPage<Props> = ({ allPosts }) => {
@@ -59,7 +60,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
 export default Home;
 
 export async function getStaticProps() {
-    const allPosts = getSortedPostsData();
+    const allPosts = getSortedPosts();
     return {
         props: {
             allPosts,

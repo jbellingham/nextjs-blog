@@ -1,32 +1,33 @@
 import React from "react";
 import Post from "./[id].page";
 import { render, screen } from "@testing-library/react";
-import { PostData } from "../../lib/posts";
 import { format, parseISO } from "date-fns";
+import { IPost } from "../../lib/domain/post/post";
 
 describe("post page", () => {
     it("renders a post given some id in the route", () => {
-        const postData: PostData = {
+        const content = "Some post content";
+        const post: IPost = {
             id: "some-blog-post",
             title: "Some blog post title",
             date: "2020-08-25",
-            contentHtml: "<p>Some post content</p>",
+            contentHtml: `<p>${content}</p>`,
+            description: "",
+            keywords: "",
+            isDraft: false,
         };
-        render(<Post postData={postData}></Post>);
+        render(<Post post={post}></Post>);
 
         expect(
             screen.getByRole("heading", { name: "Post title" })
-        ).toHaveTextContent(postData.title);
+        ).toHaveTextContent(post.title);
 
-        const date = parseISO(postData.date);
+        const date = parseISO(post.date);
 
         expect(
             screen.getByText(format(date, "LLLL d, yyyy"))
         ).toBeInTheDocument();
 
-        const content = postData.contentHtml
-            .replace("<p>", "")
-            .replace("</p>", "");
         expect(screen.getByText(content)).toBeInTheDocument();
     });
 });

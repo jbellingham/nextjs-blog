@@ -3,16 +3,17 @@ import Head from "next/head";
 import React from "react";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData, PostData } from "../../lib/posts";
+import { IPost } from "../../lib/domain/post/post";
+import { getAllPostIds, getPost } from "../../lib/domain/post/postService";
 import utilStyles from "../../styles/utils.module.css";
 import styles from "../page.module.css";
 
 interface Props {
-    postData: PostData;
+    post: IPost;
 }
 
-export default function Post({ postData }: Props) {
-    const { title, date, contentHtml, keywords, description } = postData;
+export default function Post({ post }: Props) {
+    const { title, date, contentHtml, keywords, description } = post;
     return (
         <Layout home={false}>
             <Head>
@@ -59,10 +60,10 @@ export async function getStaticProps({
     params,
 }): Promise<GetStaticPropsResult<Props>> {
     //  Return necessary data for the blog post using params.id
-    const postData = await getPostData(params.id);
+    const post = await getPost(params.id);
     return {
         props: {
-            postData,
+            post,
         },
     };
 }

@@ -3,6 +3,7 @@ title: "TWIL: Containerise a SQL Server Database Project"
 description: "How to containerise a SQL Server Database project with dacpac"
 keywords: "dotnet, .net, sql, sql server, cross-platform, legacy, dacpac"
 date: "2021-12-12"
+isDraft: false
 ---
 
 ## This Week I Learned

@@ -3,6 +3,7 @@ title: "TWIL: Cross-platform SQL Server Database Project"
 description: "How to enable a SQL Server Database project cross-platform"
 keywords: "dotnet, .net, sql, sql server, cross-platform, legacy"
 date: "2021-12-05"
+isDraft: false
 ---
 
 ## This Week I Learned

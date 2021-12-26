@@ -3,6 +3,7 @@ title: "TWIL: API Testing in .NET Core"
 description: "How to write portable API tests for .NET Core APIs"
 keywords: "dotnet, .net, sql, sql server, cross-platform, testing, api"
 date: "2021-12-20"
+isDraft: false
 ---
 
 ## This Week I Learned
