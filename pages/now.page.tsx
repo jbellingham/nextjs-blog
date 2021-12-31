@@ -56,7 +56,7 @@ export default function NowPage(): JSX.Element {
                 </p>
                 <h3>Listening to</h3>
                 <iframe
-                    src="https://open.spotify.com/embed/artist/2DlKh1IzbG3EwAMaTF2p4A?utm_source=generator"
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1EpnSM9bvYwiED?utm_source=generator"
                     width="100%"
                     height="380"
                     frameBorder="0"
