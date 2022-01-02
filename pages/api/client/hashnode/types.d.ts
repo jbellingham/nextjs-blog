@@ -1,3 +1,5 @@
+// credit to https://github.com/phuctm97/hashnode-sdk-js
+
 export type Post = {
     title: string;
     brief: string;
