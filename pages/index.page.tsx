@@ -10,11 +10,7 @@ import Date from "../components/date";
 import { IPost } from "../lib/domain/post/post";
 import { getSortedPosts } from "../lib/domain/post/postService";
 
-interface Props {
-    allPosts: IPost[];
-}
-
-const Home: NextPage<Props> = ({ allPosts }) => {
+const Home: NextPage = () => {
     return (
         <Layout home>
             <Head>
@@ -32,25 +28,17 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                             Thoughtworks
                         </a>
                     </p>
-                    <p>Sometimes I write stuff 👇</p>
-                </section>
-                <section
-                    className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
-                >
-                    <h2 className={utilStyles.headingLg}>Blog</h2>
-                    <ul className={utilStyles.list}>
-                        {allPosts.map(({ id, date, title }) => (
-                            <li className={utilStyles.listItem} key={id}>
-                                <Link href={`/posts/${id}`}>
-                                    <a>{title}</a>
-                                </Link>
-                                <br />
-                                <small className={utilStyles.lightText}>
-                                    <Date dateString={date} />
-                                </small>
-                            </li>
-                        ))}
-                    </ul>
+                    <p>
+                        <Link href="https://blog.jessebellingham.com/">
+                            <a
+                                className={styles.navLink}
+                                rel="noreferrer"
+                                target="_blank"
+                            >
+                                Sometimes I write stuff
+                            </a>
+                        </Link>
+                    </p>
                 </section>
             </div>
         </Layout>
@@ -58,12 +46,3 @@ const Home: NextPage<Props> = ({ allPosts }) => {
 };
 
 export default Home;
-
-export async function getStaticProps() {
-    const allPosts = getSortedPosts();
-    return {
-        props: {
-            allPosts,
-        },
-    };
-}
