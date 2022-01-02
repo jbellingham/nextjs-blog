@@ -1,13 +1,18 @@
-import Link from "next/link";
 import { NextPage } from "next";
 import utilStyles from "../styles/utils.module.css";
-import Date from "../components/date";
 import Layout from "../components/layout";
 import Head from "next/head";
 import styles from "./page.module.css";
-import { getSortedPosts } from "../lib/domain/post/postService";
-import { IPost } from "../lib/domain/post/post";
+import { IPost, fromHashnodeUser } from "../lib/domain/post/post";
+import { gql } from "./api/client/hashnode/client";
+import { GET_USER_ARTICLES } from "./api/client/hashnode/queries/getUserArticles";
+import { Data } from "./api/client/hashnode/types";
+import { BlogPosts } from "../components/blogPosts";
+import Link from "next/link";
 
+const directLinkStyles = {
+    fontSize: "small",
+};
 interface Props {
     allPosts: IPost[];
 }
@@ -22,20 +27,17 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
                 <section
                     className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
                 >
-                    <h2 className={utilStyles.headingLg}>Blog</h2>
-                    <ul className={utilStyles.list}>
-                        {allPosts.map(({ id, date, title }) => (
-                            <li className={utilStyles.listItem} key={id}>
-                                <Link href={`/posts/${id}`}>
-                                    <a>{title}</a>
-                                </Link>
-                                <br />
-                                <small className={utilStyles.lightText}>
-                                    <Date dateString={date} />
-                                </small>
-                            </li>
-                        ))}
-                    </ul>
+                    <h2 className={utilStyles.headingLg}>
+                        Blog posts&nbsp;
+                        <sub style={directLinkStyles}>
+                            <Link href="https://blog.jessebellingham.com">
+                                <a rel="noreferrer" target="_blank">
+                                    direct link
+                                </a>
+                            </Link>
+                        </sub>
+                    </h2>
+                    <BlogPosts posts={allPosts} />
                 </section>
             </article>
         </Layout>
@@ -45,10 +47,10 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 export default BlogPage;
 
 export async function getStaticProps() {
-    const allPosts = getSortedPosts();
+    const { user } = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
     return {
         props: {
-            allPosts,
+            allPosts: fromHashnodeUser(user),
         },
     };
 }

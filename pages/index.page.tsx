@@ -3,14 +3,19 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import React from "react";
-import Link from "next/link";
 import styles from "./index.module.css";
 
-import Date from "../components/date";
-import { IPost } from "../lib/domain/post/post";
-import { getSortedPosts } from "../lib/domain/post/postService";
+import { fromHashnodeUser, IPost } from "../lib/domain/post/post";
+import { gql } from "./api/client/hashnode/client";
+import { Data } from "./api/client/hashnode/types";
+import { GET_USER_ARTICLES } from "./api/client/hashnode/queries/getUserArticles";
+import { BlogPosts } from "../components/blogPosts";
 
-const Home: NextPage = () => {
+interface Props {
+    allPosts: IPost[];
+}
+
+const Home: NextPage<Props> = ({ allPosts }) => {
     return (
         <Layout home>
             <Head>
@@ -28,17 +33,8 @@ const Home: NextPage = () => {
                             Thoughtworks
                         </a>
                     </p>
-                    <p>
-                        <Link href="https://blog.jessebellingham.com/">
-                            <a
-                                className={styles.navLink}
-                                rel="noreferrer"
-                                target="_blank"
-                            >
-                                Sometimes I write stuff
-                            </a>
-                        </Link>
-                    </p>
+                    <p>Sometimes I write stuff 👇</p>
+                    <BlogPosts posts={allPosts} />
                 </section>
             </div>
         </Layout>
@@ -46,3 +42,12 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+    const { user } = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
+    return {
+        props: {
+            allPosts: fromHashnodeUser(user),
+        },
+    };
+}
