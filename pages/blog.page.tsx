@@ -46,7 +46,7 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 
 export default BlogPage;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const { user } = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
     return {
         props: {
