@@ -47,10 +47,14 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 export default BlogPage;
 
 export async function getServerSideProps() {
-    const { user } = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
+    const response = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
+    let posts = new Array<IPost>();
+    if (response != null) {
+        posts = fromHashnodeUser(response.user);
+    }
     return {
         props: {
-            allPosts: fromHashnodeUser(user),
+            allPosts: posts,
         },
     };
 }
