@@ -25,11 +25,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                 <section className={utilStyles.headingMd}>
                     <p>
                         I am a full-stack developer, currently working @&nbsp;
-                        <a
-                            href="http://thoughtworks.com"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="http://thoughtworks.com" target="_blank">
                             Thoughtworks
                         </a>
                     </p>
@@ -46,7 +42,7 @@ export default Home;
 export async function getServerSideProps() {
     const response = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
     let posts = new Array<IPost>();
-    if (response != null) {
+    if (response?.user) {
         posts = fromHashnodeUser(response.user);
     }
     return {

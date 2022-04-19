@@ -13,3 +13,19 @@ export const GET_USER_ARTICLES = `
         }
     }
 `;
+
+export const GET_ALL_USER_ARTICLES = `
+    query GetUserArticles {
+        user(username: "jessebellingham") {
+            publicationDomain
+            publication {
+                posts {
+                    title
+                    brief
+                    slug
+                    dateAdded
+                }
+            }
+        }
+    }
+`;
