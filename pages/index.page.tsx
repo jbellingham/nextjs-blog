@@ -25,7 +25,11 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                 <section className={utilStyles.headingMd}>
                     <p>
                         I am a full-stack developer, currently working @&nbsp;
-                        <a href="http://thoughtworks.com" target="_blank">
+                        <a
+                            href="http://thoughtworks.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             Thoughtworks
                         </a>
                     </p>
