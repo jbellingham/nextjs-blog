@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 import styles from "./page.module.css";
 
 export default function NowPage(): JSX.Element {
@@ -33,26 +33,27 @@ export default function NowPage(): JSX.Element {
                 </p>
                 <h3>Reading</h3>
                 <p>
-                    <Link href="https://www.goodreads.com/book/show/57345270-modern-software-engineering">
+                    <Link href="https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code">
                         <a target="_blank" rel="noreferrer">
-                            Modern Software Engineering: Doing What Works to
-                            Build Better Software Faster
+                            Working Effectively With Legacy Code
                         </a>
                     </Link>{" "}
-                    by Dave Farley
+                    by Michael Feathers
                 </p>
                 <h3>Read</h3>
                 <p>
-                    <Link href="https://www.goodreads.com/book/show/35747076-accelerate?ref=nav_sb_noss_l_10">
+                    <Link href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">
                         <a target="_blank" rel="noreferrer">
-                            Accelerate: Building and Scaling High-Performing
-                            Technology Organizations
+                            A Philosphy of Software Design
                         </a>
                     </Link>{" "}
-                    by Nicole Forsgren, Jez Humble, &amp; Gene Kim
+                    by John Ousterhout
                 </p>
                 <h3>Playing</h3>
-                <p>Elden Ring, Cyberpunk 2077</p>
+                <p>
+                    Forza Horizon 5, Yakuza: Like a Dragon, Red Dead Redemption
+                    2
+                </p>
                 <h3>Listening to</h3>
                 <iframe
                     src="https://open.spotify.com/embed/playlist/37i9dQZF1EpnSM9bvYwiED?utm_source=generator"

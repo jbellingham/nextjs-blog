@@ -5,10 +5,7 @@ import Head from "next/head";
 import styles from "./page.module.css";
 import { IPost, fromHashnodeUser } from "../lib/domain/post/post";
 import { gql } from "./api/client/hashnode/client";
-import {
-    GET_USER_ARTICLES,
-    GET_ALL_USER_ARTICLES,
-} from "./api/client/hashnode/queries/getUserArticles";
+import { GET_USER_ARTICLES } from "./api/client/hashnode/queries/getUserArticles";
 import { Data } from "./api/client/hashnode/types";
 import { BlogPosts } from "../components/blogPosts";
 import Link from "next/link";
@@ -48,7 +45,7 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 export default BlogPage;
 
 export async function getServerSideProps() {
-    const response = await gql<Data>(GET_ALL_USER_ARTICLES);
+    const response = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
     let posts = new Array<IPost>();
     if (response?.user) {
         posts = fromHashnodeUser(response.user);
