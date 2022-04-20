@@ -66,7 +66,7 @@ const BlogPage: NextPage<Props> = ({ pages }) => {
                                         setCurrentPageNumber(pageNumber)
                                     }
                                 >
-                                    {pageNumber}
+                                    {pageNumber + 1}
                                 </a>
                             </li>
                         ))}
