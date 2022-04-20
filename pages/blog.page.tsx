@@ -38,7 +38,12 @@ const BlogPage: NextPage<Props> = ({ pages }) => {
                         Blog posts&nbsp;
                         <sub style={directLinkStyles}>
                             <Link href="https://blog.jessebellingham.com">
-                                <a target="_blank">direct link</a>
+                                <a
+                                    className={utilStyles.internalLink}
+                                    target="_blank"
+                                >
+                                    direct link
+                                </a>
                             </Link>
                         </sub>
                     </h2>
@@ -55,7 +60,7 @@ const BlogPage: NextPage<Props> = ({ pages }) => {
                                 }`}
                             >
                                 <a
-                                    className={utilStyles.paginationLink}
+                                    className={utilStyles.internalLink}
                                     href="#"
                                     onClick={(event) =>
                                         setCurrentPageNumber(pageNumber)

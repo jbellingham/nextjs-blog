@@ -60,17 +60,17 @@ li.active {
     color: #666;
 }
 
-a.paginationLink {
+a.internalLink {
     padding: 0.75rem 1rem;
     min-width: 3.5rem;
     text-align: center;
     box-shadow: none !important;
     border-color: #ced4da !important;
-    /* color: rgb(188, 192, 192) !important; */
+    color: #82adb9 !important;
     font-weight: 900;
     font-size: 1rem;
 }
 
-a.paginationLink:visited {
+a.internalLink:visited {
     color: inherit;
 }

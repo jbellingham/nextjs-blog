@@ -1,20 +1,20 @@
 html,
 body {
-    background-color: rgb(3, 14, 14);
+    background-color: #202434;
     padding: 0;
     margin: 0;
-    color: rgb(188, 192, 192);
+    color: #bead96;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a:link {
     text-decoration: none;
-    color: rgb(65, 110, 231);
+    color: #82adb9;
 }
 
-a.externalLink:visited {
-    color: olive;
+a:visited {
+    color: #74a2b8;
 }
 
 a:hover {

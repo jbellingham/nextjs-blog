@@ -10,6 +10,7 @@ import { gql } from "./api/client/hashnode/client";
 import { Data } from "./api/client/hashnode/types";
 import { GET_USER_ARTICLES } from "./api/client/hashnode/queries/getUserArticles";
 import { BlogPosts } from "../components/blogPosts";
+import Link from "next/link";
 
 interface Props {
     allPosts: IPost[];
@@ -35,6 +36,9 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                     </p>
                     <p>Sometimes I write stuff 👇</p>
                     <BlogPosts posts={allPosts} />
+                    <Link href="/blog">
+                        <a className={utilStyles.internalLink}>See more</a>
+                    </Link>
                 </section>
             </div>
         </Layout>

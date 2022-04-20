@@ -16,7 +16,7 @@ export function BlogPosts(props: Props) {
                     <li className={utilStyles.listItem} key={title}>
                         <Link href={url}>
                             <a
-                                className="externalLink"
+                                className={utilStyles.externalLink}
                                 rel="noreferrer"
                                 target="_blank"
                             >

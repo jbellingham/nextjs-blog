@@ -3,22 +3,37 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "./navbar.module.css";
+import { useRouter } from "next/router";
 
 export default function NavBar() {
+    const router = useRouter();
+
     return (
         <nav className={styles.menuWrap} role="navigation">
             <ul id="menu" className={styles.menu}>
-                <li className={styles.menuItem}>
+                <li
+                    className={`${styles.menuItem} ${
+                        router.route === "/" ? styles.active : ""
+                    }`}
+                >
                     <Link href="/">
                         <a className={styles.navLink}>Home</a>
                     </Link>
                 </li>
-                <li className={styles.menuItem}>
+                <li
+                    className={`${styles.menuItem} ${
+                        router.route === "/now" ? styles.active : ""
+                    }`}
+                >
                     <Link href="/now">
                         <a className={styles.navLink}>Now</a>
                     </Link>
                 </li>
-                <li className={styles.menuItem}>
+                <li
+                    className={`${styles.menuItem} ${
+                        router.route === "/blog" ? styles.active : ""
+                    }`}
+                >
                     <Link href="/blog">
                         <a className={styles.navLink}>Blog</a>
                     </Link>
