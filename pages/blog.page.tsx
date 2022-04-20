@@ -9,15 +9,22 @@ import { GET_USER_ARTICLES } from "./api/client/hashnode/queries/getUserArticles
 import { Data } from "./api/client/hashnode/types";
 import { BlogPosts } from "../components/blogPosts";
 import Link from "next/link";
+import { useState } from "react";
 
 const directLinkStyles = {
     fontSize: "small",
 };
+
+interface IPage {
+    pageNumber: number;
+    posts: IPost[];
+}
 interface Props {
-    allPosts: IPost[];
+    pages: IPage[];
 }
 
-const BlogPage: NextPage<Props> = ({ allPosts }) => {
+const BlogPage: NextPage<Props> = ({ pages }) => {
+    const [currentPageNumber, setCurrentPageNumber] = useState(0);
     return (
         <Layout home={false}>
             <Head>
@@ -35,7 +42,30 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
                             </Link>
                         </sub>
                     </h2>
-                    <BlogPosts posts={allPosts} />
+                    <BlogPosts posts={pages[currentPageNumber].posts} />
+                    <ul className={utilStyles.list}>
+                        Page
+                        {pages.map(({ pageNumber }) => (
+                            <li
+                                key={`posts-page-${pageNumber}`}
+                                className={`${utilStyles.listItemHorizontal} ${
+                                    pageNumber === currentPageNumber
+                                        ? utilStyles.active
+                                        : ""
+                                }`}
+                            >
+                                <a
+                                    className={utilStyles.paginationLink}
+                                    href="#"
+                                    onClick={(event) =>
+                                        setCurrentPageNumber(pageNumber)
+                                    }
+                                >
+                                    {pageNumber}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </section>
             </article>
         </Layout>
@@ -45,14 +75,26 @@ const BlogPage: NextPage<Props> = ({ allPosts }) => {
 export default BlogPage;
 
 export async function getServerSideProps() {
-    const response = await gql<Data>(GET_USER_ARTICLES, { page: 0 });
-    let posts = new Array<IPost>();
-    if (response?.user) {
-        posts = fromHashnodeUser(response.user);
+    const pages = new Array<IPage>();
+    let pageNumber = 0;
+    while (true) {
+        const response = await gql<Data>(GET_USER_ARTICLES, {
+            page: pageNumber,
+        });
+        let posts = new Array<IPost>();
+        if (response?.user) {
+            posts = fromHashnodeUser(response.user);
+        }
+        if (posts?.length) {
+            pages.push({ pageNumber, posts });
+            pageNumber++;
+        } else {
+            break;
+        }
     }
     return {
         props: {
-            allPosts: posts,
+            pages,
         },
     };
 }

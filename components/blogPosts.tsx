@@ -15,7 +15,11 @@ export function BlogPosts(props: Props) {
                 posts.map(({ title, url, date }) => (
                     <li className={utilStyles.listItem} key={title}>
                         <Link href={url}>
-                            <a rel="noreferrer" target="_blank">
+                            <a
+                                className="externalLink"
+                                rel="noreferrer"
+                                target="_blank"
+                            >
                                 {title}
                             </a>
                         </Link>

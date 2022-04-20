@@ -12,9 +12,11 @@ a:link {
     text-decoration: none;
     color: rgb(65, 110, 231);
 }
-a:visited {
+
+a.externalLink:visited {
     color: olive;
 }
+
 a:hover {
     text-decoration: underline;
 }

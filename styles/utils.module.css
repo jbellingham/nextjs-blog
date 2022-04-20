@@ -47,6 +47,30 @@
     margin: 0 0 1.25rem;
 }
 
+li.listItemHorizontal {
+    display: inline;
+    color: rgb(188, 192, 192) !important;
+}
+
+li.active {
+    text-decoration: underline;
+}
+
 .lightText {
     color: #666;
+}
+
+a.paginationLink {
+    padding: 0.75rem 1rem;
+    min-width: 3.5rem;
+    text-align: center;
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+    /* color: rgb(188, 192, 192) !important; */
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+a.paginationLink:visited {
+    color: inherit;
 }
